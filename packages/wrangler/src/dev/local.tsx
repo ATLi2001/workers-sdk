@@ -173,6 +173,7 @@ function useLocalWorker(props: LocalProps) {
 		let server = miniflareServerRef.current;
 		if (server === undefined) {
 			logger.log(chalk.dim("⎔ Starting local server..."));
+			logger.log(chalk.dim("Austin was here"));
 			const newServer = new MiniflareServer();
 			miniflareServerRef.current = server = newServer;
 			server.addEventListener("reloaded", async (event) => {

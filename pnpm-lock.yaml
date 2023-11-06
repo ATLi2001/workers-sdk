@@ -330,7 +330,7 @@ importers:
         version: link:../../packages/workers-tsconfig
       miniflare:
         specifier: 3.20231002.1
-        version: 3.20231002.1
+        version: 3.20231002.1(supports-color@9.2.2)
       wrangler:
         specifier: workspace:*
         version: link:../../packages/wrangler
@@ -666,7 +666,7 @@ importers:
     dependencies:
       miniflare:
         specifier: 3.20231002.1
-        version: 3.20231002.1
+        version: 3.20231002.1(supports-color@9.2.2)
     devDependencies:
       '@cloudflare/workers-tsconfig':
         specifier: workspace:*
@@ -993,8 +993,8 @@ importers:
         specifier: 0.17.19
         version: 0.17.19
       miniflare:
-        specifier: file:../../../miniflare/packages/miniflare
-        version: file:../miniflare/packages/miniflare(supports-color@9.2.2)
+        specifier: 3.20231002.1
+        version: 3.20231002.1(supports-color@9.2.2)
       nanoid:
         specifier: ^3.3.3
         version: 3.3.6
@@ -3403,15 +3403,6 @@ packages:
       marked: 0.3.19
     dev: false
 
-  /@cloudflare/workerd-darwin-64@1.20220926.0:
-    resolution: {integrity: sha512-NbZ+NOviUvMHv4FLB2dlTIOp8Vh86qVCZEeQjaZ9NHjqKh9uyUEsKDuLIjea5XW+i9jHhyTlh3UQ4r2zcVhB3Q==}
-    engines: {node: '>=16'}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /@cloudflare/workerd-darwin-64@1.20231002.0:
     resolution: {integrity: sha512-sgtjzVO/wtI/6S7O0bk4zQAv2xlvqOxB18AXzlit6uXgbYFGeQedRHjhKVMOacGmWEnM4C3ir/fxJGsc3Pyxng==}
     engines: {node: '>=16'}
@@ -3427,15 +3418,6 @@ packages:
     os: [darwin]
     requiresBuild: true
     dev: true
-    optional: true
-
-  /@cloudflare/workerd-darwin-arm64@1.20220926.0:
-    resolution: {integrity: sha512-MwaAX/16YSu797/QhYU+x+Ddlk/JquTWD7vCtmhf+VeG+4Tt8/ru03MyRnnoI3vgXizox2yfQnfqI1YVlJOR8Q==}
-    engines: {node: '>=16'}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: false
     optional: true
 
   /@cloudflare/workerd-darwin-arm64@1.20231002.0:
@@ -3470,15 +3452,6 @@ packages:
     os: [linux]
     requiresBuild: true
     dev: true
-    optional: true
-
-  /@cloudflare/workerd-linux-arm64@1.20220926.0:
-    resolution: {integrity: sha512-1s8fwDOWPdHiTmEiZDgQLyEBwi5IA191Uy7vxfLvC0rOpbNqEo4MVNJ4TiVf7xjiS7X6mJ0SFyz8aDf+lrgcQA==}
-    engines: {node: '>=16'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
     optional: true
 
   /@cloudflare/workerd-linux-arm64@1.20231002.0:
@@ -13024,7 +12997,7 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /miniflare@3.20231002.1:
+  /miniflare@3.20231002.1(supports-color@9.2.2):
     resolution: {integrity: sha512-4xJ8FezJkQqHzCm71lovb9L/wJ0VV/odMFf5CIxfLTunsx97kTIlZnhS6aHuvcbzdztbWp1RR71K/1qFUHdpdQ==}
     engines: {node: '>=16.13'}
     dependencies:
@@ -17709,52 +17682,6 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
-
-  file:../miniflare/packages/miniflare(supports-color@9.2.2):
-    resolution: {directory: ../miniflare/packages/miniflare, type: directory}
-    id: file:../miniflare/packages/miniflare
-    name: miniflare
-    engines: {node: '>=16.13'}
-    dependencies:
-      acorn: 8.10.0
-      acorn-walk: 8.2.0
-      capnp-ts: 0.7.0(supports-color@9.2.2)
-      exit-hook: 2.2.1
-      glob-to-regexp: 0.4.1
-      source-map-support: 0.5.21
-      stoppable: 1.1.0
-      undici: 5.23.0
-      workerd: file:../workerd/npm/workerd
-      ws: 8.13.0
-      youch: 3.2.3
-      zod: 3.22.2
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-    dev: false
-
-  file:../workerd/npm/workerd:
-    resolution: {directory: ../workerd/npm/workerd, type: directory}
-    name: workerd
-    engines: {node: '>=16'}
-    hasBin: true
-    optionalDependencies:
-      '@cloudflare/workerd-darwin-64': 1.20220926.0
-      '@cloudflare/workerd-darwin-arm64': 1.20220926.0
-      '@cloudflare/workerd-linux-64': file:../workerd/npm/workerd-linux-64
-      '@cloudflare/workerd-linux-arm64': 1.20220926.0
-    dev: false
-
-  file:../workerd/npm/workerd-linux-64:
-    resolution: {directory: ../workerd/npm/workerd-linux-64, type: directory}
-    name: '@cloudflare/workerd-linux-64'
-    engines: {node: '>=16'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
 
   file:vendor/yoga-layout-2.0.0-beta.1.tgz:
     resolution: {integrity: sha512-cHunx1nKVIoOxUw9pJE/3mu5NCUMRmWRgzrrSPfjXXAMMzkxQGDbzP/r6Iv4tdWR20p08kgKBG7n/dmbf6FG1w==, tarball: file:vendor/yoga-layout-2.0.0-beta.1.tgz}
